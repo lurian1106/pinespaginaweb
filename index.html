@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G0thPines & Llaveros | Diseños Personalizados</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ANUNCIO PROMO -->
+    <div class="top-bar">
+        <span>✨ ¡Promoción Especial de Lanzamiento! El descuento termina en: <strong id="countdown">00d 00h 00m 00s</strong></span>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <div class="logo">
+            <h1>G0th<span>Pines</span> 📌</h1>
+        </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="navMenu">
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="#productos" class="nav-link">Productos</a>
+            <a href="#personalizados" class="nav-link">Personalizados</a>
+            <a href="#faq" class="nav-link">Preguntas</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="themeToggle" class="icon-btn" title="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="cartToggle" class="icon-btn cart-btn" title="Ver Carrito">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cartCount" class="badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- BIENVENIDA -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2 id="greetingMsg">G0TH PINES, TU PAGINA DE PINES Y LLAVEROS PERSONALIZADOS</h2>
+            <p>Pines metálicos, llaveros y pedidos 100% personalizados a tu gusto. ¡Calidad premium y el mejor precio!</p>
+            <div class="hero-btns">
+                <a href="#productos" class="btn btn-primary">Ver Catálogo</a>
+                <a href="#personalizados" class="btn btn-secondary">Pedir Personalizado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER PRECIOS DESTACADOS -->
+    <section class="pricing-banner">
+        <div class="container">
+            <h3>💳 Precios Especiales - Pago con Mercado Pago</h3>
+            <div class="price-grid">
+                <div class="price-card">
+                    <h4>Llaveros</h4>
+                    <p class="price-tag">1 x $3.000</p>
+                    <p class="price-tag highlight">2 x $5.000</p>
+                </div>
+                <div class="price-card">
+                    <h4>Pins Metálicos</h4>
+                    <p>25mm: <strong>$1.800</strong></p>
+                    <p>38mm: <strong>$2.000</strong></p>
+                    <p>55mm: <strong>$2.500</strong></p>
+                </div>
+                <div class="price-card">
+                    <h4>Pins Llaveros</h4>
+                    <p>25mm: <strong>$2.300</strong></p>
+                    <p>38mm: <strong>$2.900</strong></p>
+                    <p>55mm: <strong>$3.300</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DESTACADA CON MINIATURAS (Nivel 1) -->
+    <section class="container gallery-section">
+        <h3>📸 Diseños en Tendencia</h3>
+        <p class="section-desc">Haz clic en cualquier imagen para verla en detalle</p>
+        <div class="gallery-container">
+            <div class="main-image-box">
+                <img id="galleryFeatured" src="img/pin1.jpg" alt="Pin Destacado">
+                <p id="galleryCaption">Pin Anime Edición Limitada 38mm</p>
+            </div>
+            <div class="thumbnails-grid" id="thumbnailsContainer">
+                <!-- Miniaturas generadas dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGO DE PRODUCTOS Y FILTROS (Nivel 2) -->
+    <section id="productos" class="container main-content">
+        <h3>🏷️ Nuestro Catálogo</h3>
+        
+        <!-- Barra de búsqueda y Filtros -->
+        <div class="catalog-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar por nombre o tamaño...">
+            </div>
+            <div class="filter-buttons" id="filterContainer">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="pins">Pins Metálicos</button>
+                <button class="filter-btn" data-category="llaveros">Llaveros</button>
+                <button class="filter-btn" data-category="pins-llaveros">Pins Llaveros</button>
+            </div>
+        </div>
+
+        <!-- Rejilla de Productos -->
+        <div class="grid-productos" id="productsGrid">
+            <!-- Productos renderizados con JS -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN PEDIDOS PERSONALIZADOS -->
+    <section id="personalizados" class="custom-section">
+        <div class="container custom-container">
+            <div class="custom-info">
+                <h3>🎨 Pedidos 100% Personalizados</h3>
+                <p>¿Tienes una idea, logo, imagen o personaje favorito? ¡Nosotros lo convertimos en pin o llavero!</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Envías tu imagen o foto.</li>
+                    <li><i class="fas fa-check-circle"></i> Elegir tamaño (25mm, 38mm, 55mm).</li>
+                    <li><i class="fas fa-check-circle"></i> Descuentos por cantidad en eventos o emprendimientos.</li>
+                </ul>
+            </div>
+            <div class="custom-calc">
+                <h4>Calculadora de Presupuesto</h4>
+                <div class="form-group">
+                    <label>Producto:</label>
+                    <select id="calcType">
+                        <option value="2000">Pin Metálico 38mm ($2.000)</option>
+                        <option value="2500">Pin Metálico 55mm ($2.500)</option>
+                        <option value="3000">Llavero ($3.000)</option>
+                        <option value="2900">Pin Llavero 38mm ($2.900)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cantidad:</label>
+                    <input type="number" id="calcQty" value="1" min="1" max="100">
+                </div>
+                <div class="calc-result">
+                    <p>Total estimado: <strong id="calcTotal">$2.000</strong></p>
+                    <small id="calcDiscount" class="text-success"></small>
+                </div>
+                <button id="addCustomToCart" class="btn btn-primary full-width">Agregar Pedido Personalizado al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS CARRUSEL (Nivel 2) -->
+    <section class="container testimonials-section">
+        <h3>💬 Lo que dicen nuestros clientes</h3>
+        <div class="carousel-container">
+            <div class="testimonial-card active" id="testimonialCard">
+                <p class="testimonial-text">"¡Pedí 50 pines personalizados para mi evento y quedaron increíbles! La calidad es excelente."</p>
+                <h5 class="testimonial-author">- Camila R.</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES - ACORDEÓN (Nivel 2) -->
+    <section id="faq" class="container faq-section">
+        <h3>❓ Preguntas Frecuentes</h3>
+        <div class="accordion">
+            <div class="faq-item">
+                <button class="faq-question">¿Cómo realizo el pago por Mercado Pago? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Al finalizar tu pedido, serás derivado a WhatsApp donde te enviaremos el link de pago directo de Mercado Pago o CVU para transferencia.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">¿Cómo envío mi imagen personalizada? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Una vez realizado el pedido por WhatsApp, nos envías la imagen o diseño por el mismo chat en buena calidad.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">¿Hacen envíos a todo el país? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>¡Sí! Hacemos envíos por correo a todo el país o entregas en puntos de encuentro acordados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO Y VALIDACIÓN (Nivel 3) -->
+    <section id="contacto" class="container contact-section">
+        <h3>📩 Envíanos tus Dudas</h3>
+        <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+                <input type="text" id="contactName" placeholder="Tu Nombre Completo">
+                <small class="error-msg" id="nameError"></small>
+            </div>
+            <div class="form-group">
+                <input type="email" id="contactEmail" placeholder="Tu Correo Electrónico">
+                <small class="error-msg" id="emailError"></small>
+            </div>
+            <div class="form-group">
+                <textarea id="contactMessage" rows="4" placeholder="Escribe tu mensaje o consulta..."></textarea>
+                <small class="error-msg" id="messageError"></small>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+            <p id="formSuccess" class="form-success-msg"></p>
+        </form>
+    </section>
+
+    <!-- MODAL PANEL DEL CARRITO -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h4>🛍️ Tu Carrito de Compras</h4>
+                <button id="closeCart" class="close-btn">&times;</button>
+            </div>
+            <div id="cartItemsContainer" class="cart-body">
+                <!-- Ítems agregados -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-line">
+                    <span>Total:</span>
+                    <strong id="cartTotalAmount">$0</strong>
+                </div>
+                <button id="btnWhatsapp" class="btn btn-whatsapp full-width">
+                    <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> G0thPines & Llaveros. Todos los derechos reservados.</p>
+            <p class="footer-pm">Aceptamos Mercado Pago 💙 | Diseños Personalizados ✨</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
