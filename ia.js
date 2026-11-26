@@ -31,7 +31,7 @@ const clasesIA = {
   "pin estrella": 6,
   "pin personalizado": 7,
   "posters": 8,
-  "pin estrella": 9,
+  "pin corazon": 9,
 };
 
 
