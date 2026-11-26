@@ -646,3 +646,104 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Estilos del Reconocedor IA */
+.seccion-ia {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+}
+
+.ia-controles {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 1.2rem 0;
+    flex-wrap: wrap;
+}
+
+.ia-controles .btn {
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ia-controles .btn:hover {
+    background-color: #6d28d9;
+}
+
+#ia-visor canvas,
+#ia-visor img {
+    border-radius: 15px;
+    max-width: 280px;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#ia-barras {
+    margin: 1rem auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.ia-fila {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.ia-nombre {
+    width: 130px;
+    font-weight: 600;
+}
+
+.ia-pista {
+    flex: 1;
+    height: 10px;
+    background-color: #ede9fe;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ia-relleno {
+    display: block;
+    height: 100%;
+    background-color: #8b5cf6;
+    transition: width 0.2s;
+}
+
+.ia-fila.ganadora .ia-relleno {
+    background-color: #ec4899;
+}
+
+.ia-tarjeta {
+    background-color: #f5f3ff;
+    border: 2px solid #ddd6fe;
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.ia-resena {
+    background-color: #fafafa;
+    border-left: 3px solid #a78bfa;
+    padding: 8px 12px;
+    margin: 8px 0;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.oculto {
+    display: none !important;
+}
