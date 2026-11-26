@@ -10,28 +10,28 @@
 
 
 /* PASO 1: el enlace de tu modelo
-   Lo copiás de Teachable Machine: Exportar modelo → TensorFlow.js → Subir.
-   Ejemplo: "https://teachablemachine.withgoogle.com/models/abc123XYZ/"
+  Lo copiás de Teachable Machine: Exportar modelo → TensorFlow.js → Subir.
+  Ejemplo: "https://teachablemachine.withgoogle.com/models/abc123XYZ/"
    Si lo dejás vacío (""), la sección funciona en MODO DEMO (resultados simulados). */
 const URL_MODELO = " https://teachablemachine.withgoogle.com/models/5nTSLBedii/";
 
 
 /* PASO 2: conectá cada CLASE del modelo con un producto del catálogo
-   - El nombre de la izquierda tiene que ser IGUAL al que pusiste en Teachable Machine
-     (mayúsculas, tildes y espacios incluidos).
-   - El número es el "id" del producto en el array "productos" de script.js
-     (NO el orden de las clases en Teachable Machine).
+- El nombre de la izquierda tiene que ser IGUAL al que pusiste en Teachable Machine
+(mayúsculas, tildes y espacios incluidos).
+- El número es el "id" del producto en el array "productos" de script.js
+(NO el orden de las clases en Teachable Machine).
    - null significa "no es un producto" (por ejemplo, la clase "Nada" o "Fondo"). */
 const clasesIA = {
-  "llavero muñeco": 1,
-  "llavero largo": 2,
-  "stickers": 3,
-  "pines cuadrado": 4,
-  "posters": 5,
-  "pines tapita": 6,
-  "pines metalico": 7,
-  "pin personalizado": 8,
-  "pin estrella": null
+  "pines tapita": 1,
+  "pines cuadrado": 2,
+  "pines metalico": 3,
+  "llavero largo": 4,
+  "llavero muñeco": 5,
+  "pin estrella": 6,
+  "pin personalizado": 7,
+  "posters": 8,
+  "pin estrella": 9,
 };
 
 
@@ -49,47 +49,47 @@ const CONFIANZA_MINIMA = 0.8;
 const RESENAS_DE_EJEMPLO = true;
 
 const resenas = {
-  // 1 = Torta de chocolate
+  // 1 = pines tapita
   1: [
-    { autor: "Valentina G.", estrellas: 5, texto: "La mejor torta de chocolate de Santa Fe. Húmeda, intensa y el ganache es un sueño." },
-    { autor: "Joaquín L.", estrellas: 5, texto: "La pedí para el cumple de mi vieja y no quedó ni una miga. Ya encargué otra." },
-    { autor: "Carla B.", estrellas: 4, texto: "Riquísima y súper bien presentada. Para mi gusto, un poquito dulce, pero la volvería a pedir." }
+    { autor: "Valentina G.", estrellas: 5, texto: "Los mejores pines tapita de Santa Fe." },
+    { autor: "Joaquín L.", estrellas: 5, texto: "Los pedí para mi cumple. Ya encargué otra." },
+    { autor: "Carla B.", estrellas: 4, texto: "Súper bien presentados." }
   ],
-  // 2 = Cheesecake frutos rojos
+  // 2 = pines cuadrado
   2: [
-    { autor: "Lucía F.", estrellas: 5, texto: "Cremoso, con la base crocante justa y unos frutos rojos que levantan todo. Espectacular." },
-    { autor: "Martín A.", estrellas: 5, texto: "El mejor cheesecake que comí fuera de casa. Ni muy dulce ni muy ácido: perfecto." }
+    { autor: "Lucía F.", estrellas: 5, texto: "Muy buenos diseños." },
+    { autor: "Martín A.", estrellas: 5, texto: "Me encantan todos los diseños que hay." }
   ],
-  // 3 = Lemon pie
+  // 3 = pines metalico
   3: [
-    { autor: "Sofía P.", estrellas: 5, texto: "El merengue es una nube y la crema de limón tiene el punto justo de acidez." },
-    { autor: "Diego C.", estrellas: 4, texto: "Fresco y riquísimo, ideal para después de un asado." }
+    { autor: "Sofía P.", estrellas: 5, texto: "Les compré para una amiga y quedó encantada." },
+    { autor: "Diego C.", estrellas: 4, texto: "Volveria a comprar sin duda." }
   ],
-  // 4 = Medialunas
+  // 4 = llavero largo
   4: [
-    { autor: "Tomás R.", estrellas: 5, texto: "Medialunas como las de antes: doraditas, con almíbar y bien de manteca." },
-    { autor: "Mariana S.", estrellas: 5, texto: "Llegaron calentitas a casa. El desayuno del domingo ya tiene dueño." },
-    { autor: "Nicolás P.", estrellas: 5, texto: "Esponjosas por dentro y crocantes por fuera. Impecables." }
+    { autor: "Tomás R.", estrellas: 5, texto: "Los llaveros estan muy buenos." },
+    { autor: "Mariana S.", estrellas: 5, texto: "Compré muchos para decorar." },
+    { autor: "Nicolás P.", estrellas: 5, texto: "Estan buenos." }
   ],
-  // 5 = Sándwiches de miga
+  // 5 = llavero muñeco
   5: [
-    { autor: "Martín R.", estrellas: 5, texto: "Los pedimos para un cumple y desaparecieron en minutos. Bien rellenos y con pan fresquito." },
-    { autor: "Paula V.", estrellas: 5, texto: "Súper prolijos y abundantes. Ya son infaltables en todos nuestros festejos." }
+    { autor: "Martín R.", estrellas: 5, texto: "Me gustaron los llaveros." },
+    { autor: "Paula V.", estrellas: 5, texto: "Súper prolijos." }
   ],
-  // 6 = Pizzetas
+  // 6 = pin estrella
   6: [
-    { autor: "Gonzalo T.", estrellas: 5, texto: "Masa esponjosa y bien cargadas de queso. Los chicos las aman." },
-    { autor: "Romina L.", estrellas: 4, texto: "Riquísimas y llegaron calentitas. Las voy a pedir de nuevo." }
+    { autor: "Gonzalo T.", estrellas: 5, texto: "Me gustaron mucho estos pines." },
+    { autor: "Romina L.", estrellas: 4, texto: "Estan hermosos." }
   ],
-  // 7 = Café con leche
+  // 7 = pin personalizado
   7: [
-    { autor: "Florencia D.", estrellas: 5, texto: "Cremoso, bien caliente y con una espuma perfecta. Mi café de todas las mañanas." },
-    { autor: "Agustín M.", estrellas: 4, texto: "Muy rico y la taza es enorme. Ideal para acompañar las medialunas." }
+    { autor: "Florencia D.", estrellas: 5, texto: "Decoro mi mochila con ellos." },
+    { autor: "Agustín M.", estrellas: 4, texto: "Muy lindos para hacer regalos." }
   ],
-  // 8 = Limonada con menta
+  // 8 = posters
   8: [
-    { autor: "Camila N.", estrellas: 5, texto: "Súper fresca y natural, con la menta justa. Ideal para los días de calor santafesino." },
-    { autor: "Bruno E.", estrellas: 5, texto: "Nada que ver con las de botella. Se nota que es casera." }
+    { autor: "Camila N.", estrellas: 5, texto: "Los posters son muy lindos y unicos." },
+    { autor: "Bruno E.", estrellas: 5, texto: "Bellisimos." }
   ]
 };
 

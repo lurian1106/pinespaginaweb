@@ -1,13 +1,14 @@
 // --- BASE DE DATOS DE PRODUCTOS Y GALERÍA NORMALIZADA ---
 const productos = [
-    { id: 1, nombre: "Pin Metálico 25mm", categoria: "pins", precio: 1800, descripcion: "Pin metálico compacto ideal para mochilas.", imagen: "img/imagen1.jpeg" },
-    { id: 2, nombre: "Pin Metálico 38mm", categoria: "pins", precio: 2000, descripcion: "El tamaño clásico más vendido.", imagen: "img/imagen2.jpeg" },
-    { id: 3, nombre: "Pin Metálico 55mm", categoria: "pins", precio: 2500, descripcion: "Tamaño grande con máximo detalle.", imagen: "img/imagen3.jpeg" },
-    { id: 4, nombre: "Llavero Individual", categoria: "llaveros", precio: 3000, descripcion: "Llavero resistente con argolla metálica.", imagen: "img/imagen4.jpeg" },
-    { id: 5, nombre: "Llaveros Promo x2", categoria: "llaveros", precio: 5000, descripcion: "Llevate 2 llaveros con descuento especial.", imagen: "img/imagen5.jpeg" },
-    { id: 6, nombre: "Pin Llavero 25mm", categoria: "pins-llaveros", precio: 2300, descripcion: "Función dual: pin y llavero en uno.", imagen: "img/imagen6.jpeg" },
-    { id: 7, nombre: "Pin Llavero 38mm", categoria: "pins-llaveros", precio: 2900, descripcion: "Tamaño medio con doble función.", imagen: "img/imagen7.jpeg" },
-    { id: 8, nombre: "Pin Llavero 55mm", categoria: "pins-llaveros", precio: 3300, descripcion: "Tamaño grande dual.", imagen: "img/imagen8.jpeg" }
+    { id: 1, nombre: "pines tapita", categoria: "pins", precio: 1800, descripcion: "Pin metálico compacto ideal para mochilas.", imagen: "img/imagen1.jpeg" },
+    { id: 2, nombre: "pines cuadrado", categoria: "pins", precio: 2000, descripcion: "El modelo más vendido.", imagen: "img/imagen2.jpeg" },
+    { id: 3, nombre: "pines metalico", categoria: "pins", precio: 2500, descripcion: "Tamaño grande con máximo detalle.", imagen: "img/imagen3.jpeg" },
+    { id: 4, nombre: "llavero largo", categoria: "llaveros", precio: 3000, descripcion: "Llavero resistente con argolla metálica.", imagen: "img/imagen4.jpeg" },
+    { id: 5, nombre: "llavero muñeco", categoria: "llaveros", precio: 5000, descripcion: "Llevate 2 llaveros con descuento especial.", imagen: "img/imagen5.jpeg" },
+    { id: 6, nombre: "pin estrella", categoria: "pins-llaveros", precio: 2300, descripcion: "Función pin y llavero.", imagen: "img/imagen6.jpeg" },
+    { id: 7, nombre: "pin personalizado", categoria: "pins-llaveros", precio: 2900, descripcion: "Tamaño medio con doble función.", imagen: "img/imagen7.jpeg" },
+    { id: 8, nombre: "posters", categoria: "pins-llaveros", precio: 2900, descripcion: "Tamaño medio.", imagen: "img/imagen7.jpeg" },
+    { id: 9, nombre: "pin corazon", categoria: "pins-llaveros", precio: 3300, descripcion: "Tamaño grande.", imagen: "img/imagen8.jpeg" }
 ];
 
 const galeria = [
